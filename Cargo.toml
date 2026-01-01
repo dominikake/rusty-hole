@@ -1,0 +1,20 @@
+[package]
+name = "rusty-hole"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+trust-dns-proto = "0.22"
+reqwest = { version = "0.11", features = ["blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.5"
+axum = "0.6"
+hashbrown = "0.13"
+regex = "1.7"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+anyhow = "1.0"
+tower = "0.4"
+tower-http = { version = "0.4", features = ["cors"] }

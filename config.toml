@@ -1,0 +1,22 @@
+# RustyHole Configuration
+# Place this file in the same directory as the executable
+
+# Upstream DNS server to forward legitimate queries to
+upstream_dns = "8.8.8.8:53"
+
+# List of URLs to fetch blocklists from
+# These should be in hosts file format
+blocklist_urls = [
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/data/StevenBlack/hosts",
+]
+
+# Domains to whitelist (overrides blocklist)
+# Add domains you want to allow even if they're in the blocklist
+whitelist = []
+
+# Port for the web dashboard (default: 8080)
+web_port = 8080
+
+# DNS server bind address (requires root privileges for port 53)
+dns_bind = "0.0.0.0:53"
