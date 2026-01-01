@@ -48,8 +48,10 @@ pub async fn run() -> anyhow::Result<()> {
         dashboard::run_dashboard(web_state).await
     });
 
-    // Wait for both services
-    tokio::try_join!(dns_handle, web_handle)?;
+    // Wait for both services and handle their results
+    let (dns_result, web_result) = tokio::try_join!(dns_handle, web_handle)?;
+    dns_result?;
+    web_result?;
 
     Ok(())
 }
